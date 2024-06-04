@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  jenkins:
+    build: 
+      context: .
+      dockerfile: Primerfile
+    container_name: jenkins
+    privileged: true
+    networks:
+      - jenkins
+    ports:
+      - "9080:8080"
+      - "50000:50000"
+      - "9070:9070"
+    volumes:
+      - /opt/jenkins_home:/var/jenkins_home
+    command: --httpPort=8080
+    restart: always
+    environment:
+      TZ: "Europe/Madrid"
+    extra_hosts:
+      - "dockerhost:172.17.0.1"
+networks:
+  jenkins:
