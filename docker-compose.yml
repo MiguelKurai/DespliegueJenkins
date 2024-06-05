@@ -12,7 +12,7 @@ services:
     ports:
       - "9080:8080"
       - "50000:50000"
-      - "9070:9070"
+      - "2376:2377"
     volumes:
       - /opt/jenkins_home:/var/jenkins_home
     command: --httpPort=8080
