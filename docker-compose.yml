@@ -4,7 +4,7 @@ services:
   jenkins:
     build: 
       context: .
-      dockerfile: Primerfile
+      dockerfile: nuevoContenedor
     container_name: jenkins
     privileged: true
     networks:
